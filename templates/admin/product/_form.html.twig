@@ -1,0 +1,48 @@
+{{ form_start(form) }}
+
+<div class="row">
+    <div class="col-md-6">{{ form_row(form.name) }}</div>
+    <div class="col-md-6">{{ form_row(form.title) }}</div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">{{ form_row(form.style) }}</div>
+    <div class="col-md-4">{{ form_row(form.color) }}</div>
+    <div class="col-md-4">{{ form_row(form.degree) }}</div>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-3">{{ form_row(form.price) }} </div>
+    <div class="col-md-5">{{ form_row(form.imageFile) }} </div>
+    <div class="col-md-1 mt-2 text-align-center custom-control custom-radio ">{{ form_row(form.new, { 'attr' : { 'class': 'custom-control-input' }} ) }} </div>
+</div>
+
+<div class="row">
+    {#    {% for picture in product.pictures %}#}
+    {#        <div class="col" style="flex: none">#}
+    {#            <img src="{{ vich_uploader_asset(picture, 'imageFile')| imagine_filter('my_icon2') }}" alt="">#}
+    {#            <a href="{{ path('admin.picture.delete', {id: picture.id}) }}" data-delete#}
+    {#               data-token="{{ csrf_token('delete' ~ picture.id) }}" class="btn btn-danger">#}
+    {#                Supprimer#}
+    {#            </a>#}
+    {#        </div>#}
+    {#    {% endfor %}#}
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <label for="">{{ form_label(form.description) }}</label>
+        {{ form_widget(form.description) }}
+    </div>
+</div>
+{#<div class="row">#}
+{#    <div class="col-md-12">{{ form_row(form.soldOut) }}</div>#}
+{#</div>#}
+
+<div class="group-control  mt-3">
+    <button class="btn btn-primary">{{ button|default('Enregister le produit') }}</button>
+    <a href="{{ path('admin.product.index') }}" class="btn btn-secondary">Annuler</a>
+</div>
+{{ form_end(form) }}

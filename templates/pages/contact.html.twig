@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card w-auto">
+
+            <h3 class="card-header">
+                Notre magasin
+            </h3>
+            <div class="card-body">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d527.4360346685629!2d2.3738558124819384!3d51.03604765698239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dc8dbf93f2a4f9%3A0xcc6bbdf5de412f6!2sBrasserie%20Osseus!5e0!3m2!1sen!2sfr!4v1582032082472!5m2!1sen!2sfr"
+                            class="embed-responsive-item" width="auto" height="auto" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+
+                <div class="card-text mt-3">
+                    <p>
+                        Nous espérons donc vous accueillir nombreux : <br>
+                        19 place Roger Salengro <br>
+                        59140 Dunkerque (à 2 pas de la rue de la soif)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="card">
+            <h3 class="card-header">
+                Nous contacter
+            </h3>
+            <div class="card-body">
+                {{ form_start(form) }}
+                {{ form_rest(form) }}
+                   <input type="submit" value="Envoyer" class="btn btn-primary float-right">
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

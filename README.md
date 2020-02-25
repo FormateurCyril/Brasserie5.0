@@ -36,28 +36,42 @@ En partenariat avec [Oh my Beer](http://www.ohmybeer.fr/)
 
 ***
  
-#### Fixtures :
-- Réservation Atelier 
-    - Samedi 9h - 13h
-    - min 4 -> max 8 personnes
-    - Payement à l'atelier
-    - Coord pers lors de la resa => login
-    - Atelier / thème
-    - Asso => oh my beer  
-- Banniere sold Out (Problème n+1 cache twig) 
-- Adresse de facturation ??
-- Ajout de l'entity Events
-    - libellé
-    - description
-    - date
-    - date de création
+#### Entity 
 
-#### Check :
-- Ajout du nouveau logo et police (Attention taille image avec Liip)
-- Add property Product -> IBU (int) & soldOut (Boolean)
-- no twitter
-- Quantity à la réservation du produit
-- Message : Produit récup mag
-- degree float ?
+Product: 
+   - id, name, title, description, price, style, color, degree, updated_at, new, pictures, IBU
+   
+Event:
+   - id, title, description, date
+    
+User:
+   - id, username, password, firstname, lastname, address, zipcode, country, phone, email 
+
+#### Fixtures :
+- Menu : 
+    - [ ] Home
+    - [ ] Produits
+    - [ ] Contact
+    - [ ] Réservation 
+    - [ ] Galerie photos
+- Réservation Atelier 
+    - [ ] Samedi 9h - 13h
+    - [ ] min 4 -> max 8 personnes
+    - [ ] Payement à l'atelier
+    - [ ] Coord pers lors de la resa => login
+    - [ ] Atelier / thème
+    - [ ] Asso => oh my beer  
+
+- [ ] Banniere sold Out (Problème n+1 cache twig) 
+- [ ] Adresse de facturation ??
+- [ ] Ajout du nouveau logo et police (Attention taille image avec Liip)
+- [ ] Add property Product -> IBU (int) & soldOut (Boolean)
+- [ ] no twitter
+- [ ] Quantity à la réservation du produit
+- [ ] Message : Produit récup mag
+- [ ] Alert : Age => Accueil 
+
+- [ ] Réglementation (RGPD)
+
 
 

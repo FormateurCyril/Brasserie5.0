@@ -1,0 +1,35 @@
+.navbar{
+  margin-right: -15px;
+  margin-left: -15px;
+  font-family: $f-a;
+  font-size: $f-s;
+  color: white;
+  background-color: #13193a;
+}
+
+.topbar a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar li,
+.topbar a {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.topbar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.topbar li {
+  margin: 0 8px;
+}
+
+.topbar svg{
+  width: 12px;
+  height: 12px;
+}

@@ -1,12 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('style') }}
+    {% endblock %}
+</head>
+<body class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="{{ asset('images/logo_cut.png')|imagine_filter('thumb') }}">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('home.index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('product.index') }}">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('home.contact') }}">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('admin.product.index') }}">Admin</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+<footer>
+    <div class="card text-white text-center bg-dark mt-3">
+        <div class="card-header">
+            <h5 class="card-title">Brasserie Osseus</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-dark">Production de bière</li>
+                        <li class="list-group-item list-group-item-dark">Vente sur place</li>
+                        <li class="list-group-item list-group-item-dark">Salon de dégustation</li>
+                        <li class="list-group-item list-group-item-dark">Cours de brassage</li>
+                    </ul>
+
+                </div>
+                <div class="col-4 list-group">
+
+                    <a href="tel:0629137229" class="list-group-item list-group-item-action list-group-item-dark">
+                        {{ icon('phone') }}
+                        06-29-13-72-29
+                    </a>
+
+                    <a href="{{ path('home.contact') }}"
+                       class="list-group-item list-group-item-action list-group-item-dark">
+                        {{ icon('marker') }}
+                        19 place Roger Salengro
+                    </a>
+                    <a href="{{ path('home.contact') }}"
+                       class="list-group-item list-group-item-action list-group-item-dark">
+                        {{ icon('city') }}
+                        59140 Dunkerque
+                    </a>
+
+                </div>
+                <div class="col-4 list-group">
+                    <ul>
+                        <a href="https://www.facebook.com/brasserieosseus/" target="_blank"
+                           class="list-group-item list-group-item-action list-group-item-dark">
+                            {{ icon('facebook') }} brasserieosseus
+                        </a>
+                        <a href="https://www.instagram.com/brasserieosseus/" target="_blank"
+                           class="list-group-item list-group-item-action list-group-item-dark">
+                            {{ icon('instagram') }} brasserieosseus
+                        </a>
+                        <a href="mailto:brasserieosseus@gmail.com"
+                           class="list-group-item list-group-item-action list-group-item-dark">
+                            {{ icon('envelope') }} brasserieosseus@gmail.com
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+</body>
 </html>
